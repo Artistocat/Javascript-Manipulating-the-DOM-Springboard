@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+    </div>
+    <section id="container">
+        Hello!
+        <ul>
+            <li class="first">one</li>
+            <li class="second">two</li>
+            <li class="third">three</li>
+        </ul>
+        <ol>
+            <li class="first">one</li>
+            <li class="second">two</li>
+            <li class="third">three</li>
+        </ol>
+    </section>
+    <div class="footer">
+    </div>
+</body>
+<script>
+    //1
+    document.getElementById("container");
+    //2
+    document.querySelector("#container");
+    //3
+    document.getElementsByClassName("second");
+    //4
+    document.querySelector("ol .third");
+    // or
+    document.getElementsByTagName("ol")[0].getElementsByClassName("third");
+    // 5
+    document.getElementById("container").appendChild(document.createTextNode("Hello!")); //TODO ask about this approach
+    //let foundDiv = document.querySelector("#container");
+    //foundDiv.innerText += "hellow!";
+    //6
+    //document.getElementsByClassName("footer")[0].classList.add("main");
+    document.querySelector(".footer").classList.add("main");
+    //7
+    // console.log(document.getElementsByClassName("footer")[0].classList);
+    //document.getElementsByClassName("footer")[0].classList.remove("main");
+    document.querySelector(".footer").classList.remove("main");
+    //console.log(document.getElementsByClassName("footer")[0].classList);
+    // 8
+    let newLi = document.createElement("li");
+    // 9
+    newLi.innerText = "four";
+    // 10
+    document.querySelector("ul").appendChild(newLi);
+    // 11
+    let orderedListItems = document.querySelectorAll("ol li");
+    for (let i = 0; i < orderedListItems.length; i++) {
+        orderedListItems[i].style.backgroundColor = "green";
+    }
+    // 12
+    document.querySelector(".footer").remove();
+    
+</script>
+</html>
